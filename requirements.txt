@@ -8,3 +8,4 @@ statsmodels==0.12.2
 pystan==2.19.1.1
 fbprophet==0.7.1
 neuralprophet==0.3.0
+pandas==1.4.1
