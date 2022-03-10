@@ -36,8 +36,8 @@ def home(request):
     
     #fig5 = iplot(choromap)
     fig5 = choromap.to_html()
-    df2000 = pd.read_csv('carbonemission\dataset2000.csv')
-    df2017 = pd.read_csv('carbonemission\dataset2017.csv')
+    df2000 = pd.read_csv('carbonemission/dataset2000.csv')
+    df2017 = pd.read_csv('carbonemission/dataset2017.csv')
     fig6 = make_subplots(1, 2, specs=[[{'type':'domain'}, {'type':'domain'}]],
                         subplot_titles=['2000', '2017'])
     fig6.add_trace(go.Pie(labels=df2000['Item'], values=df2000['Value'], scalegroup='one',
@@ -112,8 +112,8 @@ def forecast_accuracy(forecast, actual):
 
 def getPredictions(x,years):
     if x == 'cereals':
-        final,prophet,model_neural,acc_list=pre('carbonemission\indiaDataset\cereals_excluding_rice_old.csv','carbonemission\combined_data.csv',"carbonemission\combined_data_arima.csv","carbonemission\combined_data_neural_prophet.csv","Cereals Exc Rice",years)
-        final1=pd.DataFrame(preprocessing('carbonemission\indiaDataset\cereals_excluding_rice_old.csv', years,10,1,10))
+        final,prophet,model_neural,acc_list=pre('carbonemission/indiaDataset/cereals_excluding_rice_old.csv','carbonemission/combined_data.csv',"carbonemission/combined_data_arima.csv","carbonemission/combined_data_neural_prophet.csv","Cereals Exc Rice",years)
+        final1=pd.DataFrame(preprocessing('carbonemission/indiaDataset/cereals_excluding_rice_old.csv', years,10,1,10))
     elif x== 'MeatBuffalo':
         final,prophet,model_neural,acc_list=pre('carbonemission\indiaDataset\meat_buffalo_old.csv','carbonemission\combined_data.csv',"carbonemission\combined_data_arima.csv","carbonemission\combined_data_neural_prophet.csv","Meat Buffalo",years)
         final1=pd.DataFrame(preprocessing('carbonemission\indiaDataset\meat_buffalo_old.csv', years,30,1,40))
