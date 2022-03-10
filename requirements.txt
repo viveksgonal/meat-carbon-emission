@@ -1,3 +1,4 @@
+pip
 django==3.2.8
 pandas==1.4.1
 seaborn==0.11.2
@@ -5,6 +6,7 @@ numpy==1.22.2
 plotly==5.3.1
 matplotlib==3.3.4
 statsmodels==0.12.2
+wheel==0.36.2
 ephem==3.7.7.1
 pystan==2.19.1.1
 fbprophet==0.7.1
@@ -12,3 +14,5 @@ torch==1.10.2
 neuralprophet==0.3.0
 scipy==1.8.0
 Pillow==8.2.0
+typing==3.7.4.3
+typing-extensions==3.7.4.3
