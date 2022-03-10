@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-8!nm58fux@9*i^qyipg6o!8zur8mv63zd9bp9yxljrpdm&$m@a
 DEBUG = False
 
 #ALLOWED_HOSTS = [os.environ.get('DJANGO_HOST', 'localhost')]
-ALLOWED_HOSTS = ['https://meat-carbon-emission.azurewebsites.net/','localhost','127.0.0.1']
+ALLOWED_HOSTS = ['https://carbon-emission.azurewebsites.net/','localhost','127.0.0.1']
 
 
 # Application definition
