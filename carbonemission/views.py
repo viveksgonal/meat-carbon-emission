@@ -14,7 +14,7 @@ from plotly.subplots import make_subplots
 import pickle
 
 def home(request):
-    world = pd.read_csv('carbonemission\meatcattleworldco.csv')
+    world = pd.read_csv('meatcattleworldco.csv')
     data = dict(
         type = 'choropleth',
         colorscale='Reds',
