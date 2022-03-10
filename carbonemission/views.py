@@ -115,32 +115,32 @@ def getPredictions(x,years):
         final,prophet,model_neural,acc_list=pre('carbonemission/indiaDataset/cereals_excluding_rice_old.csv','carbonemission/combined_data.csv',"carbonemission/combined_data_arima.csv","carbonemission/combined_data_neural_prophet.csv","Cereals Exc Rice",years)
         final1=pd.DataFrame(preprocessing('carbonemission/indiaDataset/cereals_excluding_rice_old.csv', years,10,1,10))
     elif x== 'MeatBuffalo':
-        final,prophet,model_neural,acc_list=pre('carbonemission\indiaDataset\meat_buffalo_old.csv','carbonemission\combined_data.csv',"carbonemission\combined_data_arima.csv","carbonemission\combined_data_neural_prophet.csv","Meat Buffalo",years)
-        final1=pd.DataFrame(preprocessing('carbonemission\indiaDataset\meat_buffalo_old.csv', years,30,1,40))
+        final,prophet,model_neural,acc_list=pre('carbonemission/indiaDataset/meat_buffalo_old.csv','carbonemission/combined_data.csv',"carbonemission/combined_data_arima.csv","carbonemission/combined_data_neural_prophet.csv","Meat Buffalo",years)
+        final1=pd.DataFrame(preprocessing('carbonemission/indiaDataset/meat_buffalo_old.csv', years,30,1,40))
     elif x== 'MeatCattle':
-        final,prophet,model_neural,acc_list=pre('carbonemission\indiaDataset\meat_cattle_old.csv','carbonemission\combined_data.csv',"carbonemission\combined_data_arima.csv","carbonemission\combined_data_neural_prophet.csv","Meat Cattle",years)
-        final1=pd.DataFrame(preprocessing('carbonemission\indiaDataset\meat_cattle_old.csv', years,30,1,35))
+        final,prophet,model_neural,acc_list=pre('carbonemission/indiaDataset/meat_cattle_old.csv','carbonemission/combined_data.csv',"carbonemission/combined_data_arima.csv","carbonemission/combined_data_neural_prophet.csv","Meat Cattle",years)
+        final1=pd.DataFrame(preprocessing('carbonemission/indiaDataset/meat_cattle_old.csv', years,30,1,35))
     elif x== 'MeatChicken':
-       final,prophet,model_neural,acc_list=pre('carbonemission\indiaDataset\meat_chicken_old.csv','carbonemission\combined_data.csv',"carbonemission\combined_data_arima.csv","carbonemission\combined_data_neural_prophet.csv","Meat Chicken",years)
-       final1=pd.DataFrame( preprocessing('carbonemission\indiaDataset\meat_chicken_old.csv', years,10,1,7))
+       final,prophet,model_neural,acc_list=pre('carbonemission/indiaDataset/meat_chicken_old.csv','carbonemission/combined_data.csv',"carbonemission/combined_data_arima.csv","carbonemission/combined_data_neural_prophet.csv","Meat Chicken",years)
+       final1=pd.DataFrame( preprocessing('carbonemission/indiaDataset/meat_chicken_old.csv', years,10,1,7))
     elif x== 'MeatGoat':
-        final,prophet,model_neural,acc_list=pre('carbonemission\indiaDataset\meat_goat_old.csv','carbonemission\combined_data.csv',"carbonemission\combined_data_arima.csv","carbonemission\combined_data_neural_prophet.csv","Meat Goat",years)
-        final1=pd.DataFrame(preprocessing('carbonemission\indiaDataset\meat_goat_old.csv', years,30,1,40))
+        final,prophet,model_neural,acc_list=pre('carbonemission/indiaDataset/meat_goat_old.csv','carbonemission/combined_data.csv',"carbonemission/combined_data_arima.csv","carbonemission/combined_data_neural_prophet.csv","Meat Goat",years)
+        final1=pd.DataFrame(preprocessing('carbonemission/indiaDataset/meat_goat_old.csv', years,30,1,40))
     elif x== 'MeatPig':
-        final,prophet,model_neural,acc_list=pre('carbonemission\indiaDataset\meat_pig_old.csv','carbonemission\combined_data.csv',"carbonemission\combined_data_arima.csv","carbonemission\combined_data_neural_prophet.csv","Meat Pig",years)
-        final1=pd.DataFrame(preprocessing('carbonemission\indiaDataset\meat_pig_old.csv', years,30,1,20))
+        final,prophet,model_neural,acc_list=pre('carbonemission/indiaDataset/meat_pig_old.csv','carbonemission/combined_data.csv',"carbonemission/combined_data_arima.csv","carbonemission/combined_data_neural_prophet.csv","Meat Pig",years)
+        final1=pd.DataFrame(preprocessing('carbonemission/indiaDataset/meat_pig_old.csv', years,30,1,20))
     elif x== 'MeatSheep':
-       final,prophet,model_neural,acc_list=pre('carbonemission\indiaDataset\meat_sheep_old.csv','carbonemission\combined_data.csv',"carbonemission\combined_data_arima.csv","carbonemission\combined_data_neural_prophet.csv","Meat Sheep",years)
-       final1=pd.DataFrame( preprocessing('carbonemission\indiaDataset\meat_sheep_old.csv', years,20,1,20))
+       final,prophet,model_neural,acc_list=pre('carbonemission/indiaDataset/meat_sheep_old.csv','carbonemission/combined_data.csv',"carbonemission/combined_data_arima.csv","carbonemission/combined_data_neural_prophet.csv","Meat Sheep",years)
+       final1=pd.DataFrame( preprocessing('carbonemission/indiaDataset/meat_sheep_old.csv', years,20,1,20))
     elif x== 'MilkCow':
-        final,prophet,model_neural,acc_list=pre('carbonemission\indiaDataset\milk_whole__fresh_cow_old.csv','carbonemission\combined_data.csv',"carbonemission\combined_data_arima.csv","carbonemission\combined_data_neural_prophet.csv","Milk Whole Fresh Cow",years)
-        final1=pd.DataFrame(preprocessing('carbonemission\indiaDataset\milk_whole__fresh_cow_old.csv',years,30,1,20))
+        final,prophet,model_neural,acc_list=pre('carbonemission/indiaDataset/milk_whole__fresh_cow_old.csv','carbonemission/combined_data.csv',"carbonemission/combined_data_arima.csv","carbonemission/combined_data_neural_prophet.csv","Milk Whole Fresh Cow",years)
+        final1=pd.DataFrame(preprocessing('carbonemission/indiaDataset/milk_whole__fresh_cow_old.csv',years,30,1,20))
     elif x== 'MilkBuffalo':
-        final,prophet,model_neural,acc_list=pre('carbonemission\indiaDataset\milk_whole_fresh_buffalo_old.csv','carbonemission\combined_data.csv',"carbonemission\combined_data_arima.csv","carbonemission\combined_data_neural_prophet.csv","Milk Whole Fresh Buffalo",years)
-        final1=pd.DataFrame(preprocessing('carbonemission\indiaDataset\milk_whole_fresh_buffalo_old.csv', years,30,1,20))
+        final,prophet,model_neural,acc_list=pre('carbonemission/indiaDataset/milk_whole_fresh_buffalo_old.csv','carbonemission/combined_data.csv',"carbonemission/combined_data_arima.csv","carbonemission/combined_data_neural_prophet.csv","Milk Whole Fresh Buffalo",years)
+        final1=pd.DataFrame(preprocessing('carbonemission/indiaDataset/milk_whole_fresh_buffalo_old.csv', years,30,1,20))
     else:
-        final,prophet,model_neural,acc_list=pre('carbonemission\indiaDataset\eggs_hen_in_shell_old.csv','carbonemission\combined_data.csv',"carbonemission\combined_data_arima.csv","carbonemission\combined_data_neural_prophet.csv","Egg Hen in Shell",years)
-        final1=pd.DataFrame(preprocessing('carbonemission\indiaDataset\eggs_hen_in_shell_old.csv', years,30,1,20))
+        final,prophet,model_neural,acc_list=pre('carbonemission/indiaDataset/eggs_hen_in_shell_old.csv','carbonemission/combined_data.csv',"carbonemission/combined_data_arima.csv","carbonemission/combined_data_neural_prophet.csv","Egg Hen in Shell",years)
+        final1=pd.DataFrame(preprocessing('carbonemission/indiaDataset/eggs_hen_in_shell_old.csv', years,30,1,20))
     final=pd.DataFrame(final)
     prophet=pd.DataFrame(prophet)
     model_neural=pd.DataFrame(model_neural)
@@ -149,7 +149,7 @@ def getPredictions(x,years):
 
 def getVisiualization(start,end):
 
-    combined_data=pd.read_csv('carbonemission\combined_data.csv')
+    combined_data=pd.read_csv('carbonemission/combined_data.csv')
     combined_data=combined_data.loc[(combined_data['Year']>=start)&(combined_data['Year']<=end)]
     fig1 = px.bar(combined_data, x="Year", y="Emission Intensity", color='Item',width=930, height=580)
     plot_div1 = plot(fig1, output_type='div', include_plotlyjs=False)
@@ -240,7 +240,7 @@ def com_res(request):
 # ARIMA visualize
 def A_getVisiualization(start,end):
 
-    combined_data=pd.read_csv('carbonemission\combined_data_arima.csv')
+    combined_data=pd.read_csv('carbonemission/combined_data_arima.csv')
     combined_data=combined_data.loc[(combined_data['Year']>=start)&(combined_data['Year']<=end)]
     fig1 = px.bar(combined_data, x="Year", y="Emission Intensity", color='Item',width=930, height=580)
     plot_div1 = plot(fig1, output_type='div', include_plotlyjs=False)
@@ -273,7 +273,7 @@ def A_visualize(request):
 # NeuralProphet visualize
 def N_getVisiualization(start,end):
 
-    combined_data=pd.read_csv('carbonemission\combined_data_neural_prophet.csv')
+    combined_data=pd.read_csv('carbonemission/combined_data_neural_prophet.csv')
     combined_data.rename(columns = {'ds' : 'Year', 'yhat1' : 'Emission Intensity'}, inplace = True)
     combined_data=combined_data.loc[(combined_data['Year']>=start)&(combined_data['Year']<=end)]
     fig1 = px.bar(combined_data, x="Year", y="Emission Intensity", color='Item',width=930, height=580)
