@@ -1,5 +1,5 @@
 pip
-django==3.2.8
+Django==3.2.8
 pandas==1.4.1
 seaborn==0.11.2
 numpy==1.22.2
