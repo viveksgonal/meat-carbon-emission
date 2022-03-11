@@ -72,23 +72,23 @@ def pre(x,model_prophet,model_arima,model_neural,pitem,years):
     dffao['Year'] = pd.to_datetime(dffao['Year'])
     #arima
     df1 = pd.read_csv(model_arima)
-    df1 = df1.loc[df1['Item'] == pitem]
-    df = df1[:57+years]
-    df2 = df1[:57]
+    df1 = pd.DataFrame(df1.loc[df1['Item'] == pitem])
+    df =  pd.DataFrame(df1[:57+years])
+    df2 =  pd.DataFrame(df1[:57])
     df2.rename(columns = {'Emission Intensity':'actual'}, inplace = True)
     mape_a,rmse_a = forecast_accuracy(df2.actual,dffao.Value)
     #prophet
     df3 = pd.read_csv(model_prophet)
-    df3 = df3.loc[df3['Item'] == pitem]
-    df5 = df3[:57+years]
-    df4 = df3[:57]
+    df3 = pd.DataFrame(df3.loc[df3['Item'] == pitem])
+    df5 =  pd.DataFrame(df3[:57+years])
+    df4 =  pd.DataFrame(df3[:57])
     df4.rename(columns = {'Emission Intensity':'actual'}, inplace = True)
     mape_p,rmse_p = forecast_accuracy(df4.actual,dffao.Value)
     #neural
     df6 = pd.read_csv(model_neural,parse_dates=True)
-    df6 = df6.loc[df6['Item'] == pitem]
-    df7 = df6[:57+years]
-    df8 = df6[:57]
+    df6 = pd.DataFrame(df6.loc[df6['Item'] == pitem])
+    df7 =  pd.DataFrame(df6[:57+years])
+    df8 =  pd.DataFrame(df6[:57])
     df8.rename(columns = {'yhat1':'actual'}, inplace = True)
     mape_np,rmse_np = forecast_accuracy(df8.actual,dffao.Value)
     acc_list=[mape_p,rmse_p,mape_a,rmse_a,mape_np,rmse_np]
@@ -203,7 +203,7 @@ def result(request):
     # return render(request, 'result.html', {'result': result,'img':img})
     
     result['Year'] = result['Year'].dt.strftime('%Y-%m-%d')
-    result['actualdata']=actual['Value']
+    result['actualdata5']=actual['Value']
     result.rename(columns = {'Emission Intensity':'Value'},inplace=True)
     json_records = result.reset_index().to_json(orient ='records')
     data = []
@@ -228,7 +228,7 @@ def com_res(request):
     
     result['Year'] = result['Year'].dt.strftime('%Y-%m-%d')
     result.rename(columns = {'Emission Intensity':'Value'},inplace=True)
-    result['actualdata']=actual['Value']
+    result['actualdata5']=actual['Value']
     result['prophet']=prophet['Emission Intensity']
     result['neuralprophet']=model_neural['yhat1']
     json_records = result.reset_index().to_json(orient ='records')
