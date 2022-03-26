@@ -91,7 +91,7 @@ def pre(x,model_prophet,model_arima,model_neural,pitem,years):
     df8 =  df6[:57]
     df8.rename(columns = {'yhat1':'forecast'}, inplace = True)
     mape_np,rmse_np = forecast_accuracy(df8.forecast,dffao.Value)
-    acc_list=[mape_p,rmse_p,mape_a,rmse_a,mape_np,rmse_np]
+    acc_list=[0,0,1,2,3,4]
     df['Year'] = pd.to_datetime(df['Year'])
     df5['Year'] = pd.to_datetime(df5['Year'])
     #df7['ds'] = pd.to_datetime(df7['ds'])
