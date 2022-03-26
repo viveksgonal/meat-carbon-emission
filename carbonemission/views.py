@@ -122,7 +122,7 @@ def getPredictions(x,years):
         final1=pd.DataFrame(preprocessing('carbonemission/indiaDataset/meat_cattle_old.csv'))
     elif x== 'MeatChicken':
        final,prophet,model_neural,acc_list=pre('carbonemission/indiaDataset/meat_chicken_old.csv','carbonemission/combined_data.csv',"carbonemission/combined_data_arima.csv","carbonemission/combined_data_neural_prophet.csv","Meat Chicken",years)
-       final1=pd.DataFrame( preprocessing('carbonemission/indiaDataset/meat_chicken_old.csv')
+       final1=pd.DataFrame( preprocessing('carbonemission/indiaDataset/meat_chicken_old.csv'))
     elif x== 'MeatGoat':
         final,prophet,model_neural,acc_list=pre('carbonemission/indiaDataset/meat_goat_old.csv','carbonemission/combined_data.csv',"carbonemission/combined_data_arima.csv","carbonemission/combined_data_neural_prophet.csv","Meat Goat",years)
         final1=pd.DataFrame(preprocessing('carbonemission/indiaDataset/meat_goat_old.csv'))
