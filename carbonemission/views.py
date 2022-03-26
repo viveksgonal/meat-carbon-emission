@@ -97,50 +97,50 @@ def pre(x,model_prophet,model_arima,model_neural,pitem,years):
     #df7['ds'] = pd.to_datetime(df7['ds'])
     return df,df5,df7,acc_list
 
-def preprocessing(x,years,p,d,q):
-    dffao = pd.read_csv(x)
-    dffao.drop(['Domain','Area','Element','Item'],axis=1,inplace=True)
-    dffao['Year'] = dffao['Year'].astype(str) + '/12/31'
-    dffao['Year'] = dffao['Year'].str.replace('/','-')
-    dffao['Year'] = pd.to_datetime(dffao['Year'])
-    return dffao
+def preprocessing(x):
+    dff = pd.read_csv(x)
+    dff.drop(['Domain','Area','Element','Item'],axis=1,inplace=True)
+    dff['Year'] = dff['Year'].astype(str) + '/12/31'
+    dff['Year'] = dff['Year'].str.replace('/','-')
+    dff['Year'] = pd.to_datetime(dff['Year'])
+    return dff
 
-def forecast_accuracy(forecast, actual):
-    mape = np.mean(np.abs(forecast - actual)/np.abs(actual))  # MApe
-    rmse = np.mean((forecast - actual)**2)**.5  # RMSE
+def forecast_accuracy(forecast, act):
+    mape = np.mean(np.abs(forecast - act)/np.abs(act))  # MApe
+    rmse = np.mean((forecast - act)**2)**.5  # RMSE
     return mape,rmse
 
 def getPredictions(x,years):
     if x == 'cereals':
         final,prophet,model_neural,acc_list=pre('carbonemission/indiaDataset/cereals_excluding_rice_old.csv','carbonemission/combined_data.csv',"carbonemission/combined_data_arima.csv","carbonemission/combined_data_neural_prophet.csv","Cereals Exc Rice",years)
-        final1=pd.DataFrame(preprocessing('carbonemission/indiaDataset/cereals_excluding_rice_old.csv', years,10,1,10))
+        final1=pd.DataFrame(preprocessing('carbonemission/indiaDataset/cereals_excluding_rice_old.csv'))
     elif x== 'MeatBuffalo':
         final,prophet,model_neural,acc_list=pre('carbonemission/indiaDataset/meat_buffalo_old.csv','carbonemission/combined_data.csv',"carbonemission/combined_data_arima.csv","carbonemission/combined_data_neural_prophet.csv","Meat Buffalo",years)
-        final1=pd.DataFrame(preprocessing('carbonemission/indiaDataset/cereals_excluding_rice_old.csv', years,30,1,40))
+        final1=pd.DataFrame(preprocessing('carbonemission/indiaDataset/meat_buffalo_old.csv'))
     elif x== 'MeatCattle':
         final,prophet,model_neural,acc_list=pre('carbonemission/indiaDataset/meat_cattle_old.csv','carbonemission/combined_data.csv',"carbonemission/combined_data_arima.csv","carbonemission/combined_data_neural_prophet.csv","Meat Cattle",years)
-        final1=pd.DataFrame(preprocessing('carbonemission/indiaDataset/meat_cattle_old.csv', years,30,1,35))
+        final1=pd.DataFrame(preprocessing('carbonemission/indiaDataset/meat_cattle_old.csv'))
     elif x== 'MeatChicken':
        final,prophet,model_neural,acc_list=pre('carbonemission/indiaDataset/meat_chicken_old.csv','carbonemission/combined_data.csv',"carbonemission/combined_data_arima.csv","carbonemission/combined_data_neural_prophet.csv","Meat Chicken",years)
-       final1=pd.DataFrame( preprocessing('carbonemission/indiaDataset/meat_chicken_old.csv', years,10,1,7))
+       final1=pd.DataFrame( preprocessing('carbonemission/indiaDataset/meat_chicken_old.csv')
     elif x== 'MeatGoat':
         final,prophet,model_neural,acc_list=pre('carbonemission/indiaDataset/meat_goat_old.csv','carbonemission/combined_data.csv',"carbonemission/combined_data_arima.csv","carbonemission/combined_data_neural_prophet.csv","Meat Goat",years)
-        final1=pd.DataFrame(preprocessing('carbonemission/indiaDataset/meat_goat_old.csv', years,30,1,40))
+        final1=pd.DataFrame(preprocessing('carbonemission/indiaDataset/meat_goat_old.csv'))
     elif x== 'MeatPig':
         final,prophet,model_neural,acc_list=pre('carbonemission/indiaDataset/meat_pig_old.csv','carbonemission/combined_data.csv',"carbonemission/combined_data_arima.csv","carbonemission/combined_data_neural_prophet.csv","Meat Pig",years)
-        final1=pd.DataFrame(preprocessing('carbonemission/indiaDataset/meat_pig_old.csv', years,30,1,20))
+        final1=pd.DataFrame(preprocessing('carbonemission/indiaDataset/meat_pig_old.csv'))
     elif x== 'MeatSheep':
        final,prophet,model_neural,acc_list=pre('carbonemission/indiaDataset/meat_sheep_old.csv','carbonemission/combined_data.csv',"carbonemission/combined_data_arima.csv","carbonemission/combined_data_neural_prophet.csv","Meat Sheep",years)
-       final1=pd.DataFrame( preprocessing('carbonemission/indiaDataset/meat_sheep_old.csv', years,20,1,20))
+       final1=pd.DataFrame( preprocessing('carbonemission/indiaDataset/meat_sheep_old.csv'))
     elif x== 'MilkCow':
         final,prophet,model_neural,acc_list=pre('carbonemission/indiaDataset/milk_whole__fresh_cow_old.csv','carbonemission/combined_data.csv',"carbonemission/combined_data_arima.csv","carbonemission/combined_data_neural_prophet.csv","Milk Whole Fresh Cow",years)
-        final1=pd.DataFrame(preprocessing('carbonemission/indiaDataset/milk_whole__fresh_cow_old.csv',years,30,1,20))
+        final1=pd.DataFrame(preprocessing('carbonemission/indiaDataset/milk_whole__fresh_cow_old.csv'))
     elif x== 'MilkBuffalo':
         final,prophet,model_neural,acc_list=pre('carbonemission/indiaDataset/milk_whole_fresh_buffalo_old.csv','carbonemission/combined_data.csv',"carbonemission/combined_data_arima.csv","carbonemission/combined_data_neural_prophet.csv","Milk Whole Fresh Buffalo",years)
-        final1=pd.DataFrame(preprocessing('carbonemission/indiaDataset/milk_whole_fresh_buffalo_old.csv', years,30,1,20))
+        final1=pd.DataFrame(preprocessing('carbonemission/indiaDataset/milk_whole_fresh_buffalo_old.csv'))
     else:
         final,prophet,model_neural,acc_list=pre('carbonemission/indiaDataset/eggs_hen_in_shell_old.csv','carbonemission/combined_data.csv',"carbonemission/combined_data_arima.csv","carbonemission/combined_data_neural_prophet.csv","Egg hen in shell",years)
-        final1=pd.DataFrame(preprocessing('carbonemission/indiaDataset/eggs_hen_in_shell_old.csv', years,30,1,20))
+        final1=pd.DataFrame(preprocessing('carbonemission/indiaDataset/eggs_hen_in_shell_old.csv'))
     final=pd.DataFrame(final)
     prophet=pd.DataFrame(prophet)
     model_neural=pd.DataFrame(model_neural)
